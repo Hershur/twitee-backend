@@ -1,0 +1,46 @@
+{
+  "name": "twitee-backend",
+  "version": "1.0.0",
+  "description": "## Built with NodeJS/Express",
+  "main": "start.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest --collect-coverage",
+    "start": "node start.js",
+    "start:dev": "nodemon start.js"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hershur/twitee-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hershur/twitee-backend/issues"
+  },
+  "homepage": "https://github.com/Hershur/twitee-backend#readme",
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "babel-jest": "^27.3.1",
+    "jest": "^27.3.1",
+    "supertest": "^6.1.6"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "joi": "^17.4.2",
+    "lodash": "^4.17.21",
+    "mongoose": "^6.0.13",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15"
+  }
+}
