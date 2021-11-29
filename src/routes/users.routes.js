@@ -4,10 +4,24 @@ import {
     deleteUserById, 
     getAllUsers, 
     getUserById, 
-    updateUserById
+    updateUserById,
+    loginUser
 } from '../controllers/users.controller.js';
+import verifyToken from '../middleware/auth.js';
 
 const usersRouter = express.Router();
+
+
+/**
+ * @description Login user
+ * @method POST/
+ */
+
+usersRouter.post('/login', loginUser);
+
+
+//JWT Authentication middleware
+usersRouter.use(verifyToken);
 
 
 /**
@@ -40,7 +54,7 @@ usersRouter.put('/:id/update', updateUserById);
  * @description  Delete a single user
  * @method PUT/
  */
-usersRouter.put('/:id/delete', deleteUserById);
+usersRouter.delete('/:id/delete', deleteUserById);
 
 
 

@@ -7,8 +7,14 @@ import connectDB from './database/connection.js';
 
 const app = express();
 
-
-connectDB();
+try {
+    //Connect to mongo atlas db
+    
+    await connectDB();
+    
+} catch (error) {
+    console.log(error.message);
+}
 
 // load app middlewares
 app.use(logger('dev'));
