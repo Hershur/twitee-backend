@@ -8,13 +8,13 @@ const tokenKey = process.env.TOKEN_KEY;
 const verifyToken = (req, res, next) => {
     const authorization = req.headers["authorization"];
     const token = authorization?.split(' ')[1];
-    const email = req.body.email;
+
 
 
     try {
         const decoded = jwt.verify(token, tokenKey);
 
-        if(decoded?.email === email) {
+        if(decoded) {
             return next();
         } else {
             return res.status(403).json({

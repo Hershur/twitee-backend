@@ -36,8 +36,20 @@ export const createAccountRepo = async (userBody)=> {
 export const getAllUsersRepo = async ()=> {
     
     const allUsers = await userDB.find();
+    let retrievedUsers = [];
 
-    return allUsers;
+    allUsers.forEach(user => {
+        let retrievedUser = {
+                _id: user._id,
+                email: user.email,
+                name: user.name,
+                created: user.createdOn
+        };
+
+        retrievedUsers.push(retrievedUser);
+    });
+
+    return retrievedUsers;
 };
 
 export const getUserByIdRepo = async (id)=> {
