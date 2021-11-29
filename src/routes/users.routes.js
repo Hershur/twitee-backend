@@ -20,6 +20,14 @@ const usersRouter = express.Router();
 usersRouter.post('/login', loginUser);
 
 
+/**
+ * @description Create account
+ * @method POST/
+ */
+usersRouter.post('/create-account', createAccount);
+
+
+
 //JWT Authentication middleware
 usersRouter.use(verifyToken);
 
@@ -37,12 +45,6 @@ usersRouter.get('/', getAllUsers);
  */
 
 usersRouter.get('/:id', getUserById);
-
-/**
- * @description Create account
- * @method POST/
- */
-usersRouter.post('/create-account', createAccount);
 
 /**
  * @description  Update a single user
